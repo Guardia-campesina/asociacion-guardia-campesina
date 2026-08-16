@@ -1,392 +1,1219 @@
-<!doctype html>
-<html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Asociación Guardia Campesina</title>
-
-  <meta
-    name="description"
-    content="Sitio oficial de la Asociación Guardia Campesina. Información institucional y verificación de carnets."
-  >
-
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-<header class="header">
-  <div class="wrap nav">
-
-    <a class="brand" href="#inicio">
-      <img
-        src="logo.jpg"
-        alt="Logo de la Asociación Guardia Campesina"
-      >
-
-      <span>
-        ASOCIACIÓN<br>
-        GUARDIA CAMPESINA
-      </span>
-    </a>
-
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#asociacion">La Asociación</a>
-      <a href="#verificar">Verificar carnet</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-
-  </div>
-</header>
-
-
-<main>
-
-<!-- =========================
-     INICIO
-========================= -->
-
-<section id="inicio" class="hero">
-
-  <div class="wrap hero-grid">
-
-    <div>
-
-      <span class="eyebrow">
-        Sitio oficial
-      </span>
-
-      <h1>
-        Identidad, organización y comunidad.
-      </h1>
-
-      <p>
-        Espacio institucional de la Asociación Guardia Campesina
-        y portal para la verificación de carnets de sus miembros.
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="btn primary"
-          href="#verificar"
-        >
-          Verificar un carnet
-        </a>
-
-        <a
-          class="btn light"
-          href="#asociacion"
-        >
-          Conocer la Asociación
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="hero-card">
-
-      <div class="seal">
-        AGC
-      </div>
-
-      <h2>
-        Verificación de identidad
-      </h2>
-
-      <p>
-        Escanea el código QR de un carnet para consultar
-        su estado en el registro oficial.
-      </p>
-
-      <a
-        class="verify-link"
-        href="#verificar"
-      >
-        Ir a verificación →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     LA ASOCIACIÓN
-========================= -->
-
-<section id="asociacion" class="section">
-
-  <div class="wrap">
-
-    <span class="eyebrow">
-      Quiénes somos
-    </span>
-
-    <h2>
-      Asociación Guardia Campesina
-    </h2>
-
-    <p class="lead">
-      Una organización orientada al fortalecimiento de la
-      comunidad campesina, la participación y el trabajo
-      colectivo, promoviendo la unidad y el bienestar de
-      sus miembros y comunidades.
-    </p>
-
-
-    <!-- MISIÓN Y VISIÓN -->
-
-    <div class="mission-vision">
-
-      <article class="info-card">
-
-        <span class="icon">
-          🎯
-        </span>
-
-        <h3>
-          Misión
-        </h3>
-
-        <p>
-          Promover la organización, participación y bienestar
-          de las comunidades campesinas, fortaleciendo la unidad,
-          la solidaridad y el trabajo comunitario para contribuir
-          al desarrollo social y territorial.
-        </p>
-
-      </article>
-
-
-      <article class="info-card">
-
-        <span class="icon">
-          🌱
-        </span>
-
-        <h3>
-          Visión
-        </h3>
-
-        <p>
-          Ser una organización campesina fortalecida y reconocida
-          en el departamento de Córdoba por su liderazgo comunitario,
-          su compromiso social y su aporte al desarrollo y bienestar
-          de las comunidades.
-        </p>
-
-      </article>
-
-    </div>
-
-
-    <!-- CARACTERÍSTICAS -->
-
-    <div class="cards">
-
-      <article>
-
-        <span class="icon">
-          🤝
-        </span>
-
-        <h3>
-          Comunidad
-        </h3>
-
-        <p>
-          Fortalecemos la organización y la identificación
-          de nuestros miembros.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <span class="icon">
-          🪪
-        </span>
-
-        <h3>
-          Carnets
-        </h3>
-
-        <p>
-          Carnets físicos y digitales con un código único
-          de verificación.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <span class="icon">
-          🔐
-        </span>
-
-        <h3>
-          Verificación
-        </h3>
-
-        <p>
-          Consulta pública limitada a la información necesaria
-          para validar un carnet.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     VERIFICACIÓN
-========================= -->
-
-<section
-  id="verificar"
-  class="verify-section"
->
-
-  <div class="wrap verify-box">
-
-    <div>
-
-      <span class="eyebrow">
-        Portal de verificación
-      </span>
-
-      <h2>
-        Comprueba un carnet
-      </h2>
-
-      <p>
-        Introduce el código que aparece en el carnet.
-        En la versión final, el QR llevará directamente
-        a esta consulta.
-      </p>
-
-    </div>
-
-
-    <form id="verifyForm">
-
-      <label for="code">
-        Código del carnet
-      </label>
-
-      <div class="input-row">
-
-        <input
-          id="code"
-          required
-          placeholder="Ej. AGC-000001"
-          autocomplete="off"
-        >
-
-        <button
-          class="btn primary"
-          type="submit"
-        >
-          Verificar
-        </button>
-
-      </div>
-
-    </form>
-
-
-    <div
-      id="result"
-      class="result hidden"
-    ></div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACTO
-========================= -->
-
-<section
-  id="contacto"
-  class="section"
->
-
-  <div class="wrap contact">
-
-    <div>
-
-      <span class="eyebrow">
-        Contacto
-      </span>
-
-      <h2>
-        Asociación Guardia Campesina
-      </h2>
-
-      <p>
-        Los datos de contacto oficiales se incorporarán
-        aquí antes de publicar la versión definitiva
-        del sitio.
-      </p>
-
-    </div>
-
-
-    <div class="contact-card">
-
-      <strong>
-        Portal institucional
-      </strong>
-
-      <span>
-        Sitio oficial de la Asociación Guardia Campesina.
-      </span>
-
-    </div>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================
-     PIE DE PÁGINA
-========================= -->
-
-<footer>
-
-  <div class="wrap">
-
-    © <span id="year"></span>
-    Asociación Guardia Campesina
-    · Sitio en construcción
-
-  </div>
-
-</footer>
-
-
-<script src="app.js"></script>
-
-</body>
-
-</html>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #163322;
+  background: #f7f9f6;
+}
+
+.wrap {
+  max-width: 1160px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #075b2a;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.16);
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .5px;
+  line-height: 1.05;
+}
+
+.brand img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.brand span {
+  font-size: 14px;
+}
+
+.nav nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav nav a {
+  color: #eaf5ed;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.nav nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(135deg, #064d25, #087538, #075b2a);
+  color: #fff;
+  padding: 96px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  font-weight: 900;
+  font-size: 11px;
+  color: #2f8b50;
+}
+
+.hero .eyebrow {
+  color: #cbead5;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1;
+  margin: 14px 0 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e1f0e5;
+  max-width: 660px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 19px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary {
+  background: #08702f;
+  color: #fff;
+}
+
+.hero .primary {
+  background: #fff;
+  color: #075b2a;
+}
+
+.light {
+  background: #ffffff16;
+  color: #fff;
+  border: 1px solid #ffffff55;
+}
+
+.hero-card {
+  background: #ffffff12;
+  border: 1px solid #ffffff35;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.seal {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e8f4eb;
+  color: #075b2a;
+  font-weight: 1000;
+  font-size: 24px;
+  margin-bottom: 22px;
+}
+
+.hero-card h2 {
+  font-size: 27px;
+  margin: 0 0 12px;
+}
+
+.hero-card p {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.verify-link {
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.section h2,
+.verify-section h2 {
+  font-size: 40px;
+  color: #0a4c25;
+  margin: 10px 0 14px;
+}
+
+.lead {
+  max-width: 750px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #596960;
+}
+
+/* MISIÓN Y VISIÓN */
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 18px;
+  padding: 29px;
+  box-shadow: 0 8px 28px rgba(21,53,29,.06);
+}
+
+.info-card h3 {
+  color: #0a4c25;
+  font-size: 23px;
+  margin: 14px 0 9px;
+}
+
+.info-card p {
+  color: #647169;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.cards article {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 18px;
+  padding: 29px;
+  box-shadow: 0 8px 28px rgba(21,53,29,.06);
+}
+
+.icon {
+  font-size: 31px;
+}
+
+.cards h3 {
+  margin: 15px 0 8px;
+  color: #0a4c25;
+}
+
+.cards p {
+  color: #647169;
+  line-height: 1.65;
+}
+
+.verify-section {
+  background: #eaf4ed;
+  padding: 80px 0;
+}
+
+.verify-box {
+  background: #fff;
+  border: 1px solid #d5e3d8;
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 15px 45px rgba(20,58,32,.10);
+}
+
+.verify-box p {
+  color: #5f6e65;
+  line-height: 1.65;
+}
+
+.verify-box form {
+  margin-top: 28px;
+}
+
+.verify-box label {
+  display: block;
+  font-weight: 900;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  border: 1px solid #c9d7cc;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.result-card {
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.valid {
+  background: #e1f4e5;
+  border: 1px solid #acd8b7;
+  color: #075b2a;
+}
+
+.error {
+  background: #fff0f0;
+  border: 1px solid #e4baba;
+  color: #922b2b;
+}
+
+.suspended {
+  background: #fff7df;
+  border: 1px solid #ead28b;
+  color: #745400;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 16px;
+  padding: 27px;
+}
+
+.contact-card strong {
+  color: #0a4c25;
+}
+
+.contact-card span {
+  display: block;
+  color: #68766e;
+  margin-top: 8px;
+}
+
+footer {
+  background: #073f20;
+  color: #dcebe1;
+  padding: 28px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+
+  .nav {
+    min-height: 72px;
+  }
+
+  .nav nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero-grid,
+  .contact,
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .verify-box {
+    padding: 27px 22px;
+  }
+  }* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #163322;
+  background: #f7f9f6;
+}
+
+.wrap {
+  max-width: 1160px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #075b2a;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.16);
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .5px;
+  line-height: 1.05;
+}
+
+.brand img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.brand span {
+  font-size: 14px;
+}
+
+.nav nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav nav a {
+  color: #eaf5ed;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.nav nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(135deg, #064d25, #087538, #075b2a);
+  color: #fff;
+  padding: 96px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  font-weight: 900;
+  font-size: 11px;
+  color: #2f8b50;
+}
+
+.hero .eyebrow {
+  color: #cbead5;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1;
+  margin: 14px 0 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e1f0e5;
+  max-width: 660px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 19px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary {
+  background: #08702f;
+  color: #fff;
+}
+
+.hero .primary {
+  background: #fff;
+  color: #075b2a;
+}
+
+.light {
+  background: #ffffff16;
+  color: #fff;
+  border: 1px solid #ffffff55;
+}
+
+.hero-card {
+  background: #ffffff12;
+  border: 1px solid #ffffff35;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.seal {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e8f4eb;
+  color: #075b2a;
+  font-weight: 1000;
+  font-size: 24px;
+  margin-bottom: 22px;
+}
+
+.hero-card h2 {
+  font-size: 27px;
+  margin: 0 0 12px;
+}
+
+.hero-card p {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.verify-link {
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.section h2,
+.verify-section h2 {
+  font-size: 40px;
+  color: #0a4c25;
+  margin: 10px 0 14px;
+}
+
+.lead {
+  max-width: 750px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #596960;
+}
+
+/* MISIÓN Y VISIÓN */
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 18px;
+  padding: 29px;
+  box-shadow: 0 8px 28px rgba(21,53,29,.06);
+}
+
+.info-card h3 {
+  color: #0a4c25;
+  font-size: 23px;
+  margin: 14px 0 9px;
+}
+
+.info-card p {
+  color: #647169;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.cards article {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 18px;
+  padding: 29px;
+  box-shadow: 0 8px 28px rgba(21,53,29,.06);
+}
+
+.icon {
+  font-size: 31px;
+}
+
+.cards h3 {
+  margin: 15px 0 8px;
+  color: #0a4c25;
+}
+
+.cards p {
+  color: #647169;
+  line-height: 1.65;
+}
+
+.verify-section {
+  background: #eaf4ed;
+  padding: 80px 0;
+}
+
+.verify-box {
+  background: #fff;
+  border: 1px solid #d5e3d8;
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 15px 45px rgba(20,58,32,.10);
+}
+
+.verify-box p {
+  color: #5f6e65;
+  line-height: 1.65;
+}
+
+.verify-box form {
+  margin-top: 28px;
+}
+
+.verify-box label {
+  display: block;
+  font-weight: 900;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  border: 1px solid #c9d7cc;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.result-card {
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.valid {
+  background: #e1f4e5;
+  border: 1px solid #acd8b7;
+  color: #075b2a;
+}
+
+.error {
+  background: #fff0f0;
+  border: 1px solid #e4baba;
+  color: #922b2b;
+}
+
+.suspended {
+  background: #fff7df;
+  border: 1px solid #ead28b;
+  color: #745400;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 16px;
+  padding: 27px;
+}
+
+.contact-card strong {
+  color: #0a4c25;
+}
+
+.contact-card span {
+  display: block;
+  color: #68766e;
+  margin-top: 8px;
+}
+
+footer {
+  background: #073f20;
+  color: #dcebe1;
+  padding: 28px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+
+  .nav {
+    min-height: 72px;
+  }
+
+  .nav nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero-grid,
+  .contact,
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .verify-box {
+    padding: 27px 22px;
+  }
+}* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #163322;
+  background: #f7f9f6;
+}
+
+.wrap {
+  max-width: 1160px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #075b2a;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.16);
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .5px;
+  line-height: 1.05;
+}
+
+.brand img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.brand span {
+  font-size: 14px;
+}
+
+.nav nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav nav a {
+  color: #eaf5ed;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.nav nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(135deg, #064d25, #087538, #075b2a);
+  color: #fff;
+  padding: 96px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  font-weight: 900;
+  font-size: 11px;
+  color: #2f8b50;
+}
+
+.hero .eyebrow {
+  color: #cbead5;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1;
+  margin: 14px 0 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e1f0e5;
+  max-width: 660px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 19px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary {
+  background: #08702f;
+  color: #fff;
+}
+
+.hero .primary {
+  background: #fff;
+  color: #075b2a;
+}
+
+.light {
+  background: #ffffff16;
+  color: #fff;
+  border: 1px solid #ffffff55;
+}
+
+.hero-card {
+  background: #ffffff12;
+  border: 1px solid #ffffff35;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.seal {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e8f4eb;
+  color: #075b2a;
+  font-weight: 1000;
+  font-size: 24px;
+  margin-bottom: 22px;
+}
+
+.hero-card h2 {
+  font-size: 27px;
+  margin: 0 0 12px;
+}
+
+.hero-card p {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.verify-link {
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.section h2,
+.verify-section h2 {
+  font-size: 40px;
+  color: #0a4c25;
+  margin: 10px 0 14px;
+}
+
+.lead {
+  max-width: 750px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #596960;
+}
+
+/* MISIÓN Y VISIÓN */
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 18px;
+  padding: 29px;
+  box-shadow: 0 8px 28px rgba(21,53,29,.06);
+}
+
+.info-card h3 {
+  color: #0a4c25;
+  font-size: 23px;
+  margin: 14px 0 9px;
+}
+
+.info-card p {
+  color: #647169;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.cards article {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 18px;
+  padding: 29px;
+  box-shadow: 0 8px 28px rgba(21,53,29,.06);
+}
+
+.icon {
+  font-size: 31px;
+}
+
+.cards h3 {
+  margin: 15px 0 8px;
+  color: #0a4c25;
+}
+
+.cards p {
+  color: #647169;
+  line-height: 1.65;
+}
+
+.verify-section {
+  background: #eaf4ed;
+  padding: 80px 0;
+}
+
+.verify-box {
+  background: #fff;
+  border: 1px solid #d5e3d8;
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 15px 45px rgba(20,58,32,.10);
+}
+
+.verify-box p {
+  color: #5f6e65;
+  line-height: 1.65;
+}
+
+.verify-box form {
+  margin-top: 28px;
+}
+
+.verify-box label {
+  display: block;
+  font-weight: 900;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  border: 1px solid #c9d7cc;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.result-card {
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.valid {
+  background: #e1f4e5;
+  border: 1px solid #acd8b7;
+  color: #075b2a;
+}
+
+.error {
+  background: #fff0f0;
+  border: 1px solid #e4baba;
+  color: #922b2b;
+}
+
+.suspended {
+  background: #fff7df;
+  border: 1px solid #ead28b;
+  color: #745400;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid #dce6de;
+  border-radius: 16px;
+  padding: 27px;
+}
+
+.contact-card strong {
+  color: #0a4c25;
+}
+
+.contact-card span {
+  display: block;
+  color: #68766e;
+  margin-top: 8px;
+}
+
+footer {
+  background: #073f20;
+  color: #dcebe1;
+  padding: 28px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+
+  .nav {
+    min-height: 72px;
+  }
+
+  .nav nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero-grid,
+  .contact,
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .verify-box {
+    padding: 27px 22px;
+  }
+}
