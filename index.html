@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asociación Guardia Campesina</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
+<body>
+
+  <header class="header">
+    <div class="wrap nav">
+
+      <a href="#inicio" class="brand">
+        <img src="logo.jpg" alt="Logo de la Asociación Guardia Campesina">
+        <span>Asociación<br>Guardia Campesina</span>
+      </a>
+
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#asociacion">La Asociación</a>
+        <a href="#verificacion">Verificación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <div class="wrap hero-grid">
+
+        <div>
+          <div class="eyebrow">Córdoba, Colombia</div>
+
+          <h1>Asociación Guardia Campesina</h1>
+
+          <p>
+            Organización comprometida con la participación,
+            la solidaridad y el bienestar de las comunidades campesinas.
+          </p>
+
+          <div class="buttons">
+            <a href="#asociacion" class="btn primary">
+              Conocer la Asociación
+            </a>
+
+            <a href="#verificacion" class="btn light">
+              Verificar carnet
+            </a>
+          </div>
+        </div>
+
+
+        <div class="hero-card">
+          <div class="seal">AGC</div>
+
+          <h2>Identidad y organización</h2>
+
+          <p>
+            Fortalecemos la unidad, la participación y el trabajo
+            comunitario de las comunidades campesinas.
+          </p>
+
+          <a href="#verificacion" class="verify-link">
+            Comprobar un carnet →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="asociacion" class="section">
+      <div class="wrap">
+
+        <div class="eyebrow">Nuestra organización</div>
+
+        <h2>La Asociación</h2>
+
+        <p class="lead">
+          La Asociación Guardia Campesina desarrolla su labor
+          en el departamento de Córdoba, Colombia, promoviendo
+          la organización y participación de las comunidades campesinas.
+        </p>
+
+
+        <div class="cards">
+
+          <article>
+            <div class="icon">🤝</div>
+
+            <h3>Comunidad</h3>
+
+            <p>
+              Promovemos la unidad, la solidaridad y el trabajo
+              comunitario.
+            </p>
+          </article>
+
+
+          <article>
+            <div class="icon">🪪</div>
+
+            <h3>Carnets</h3>
+
+            <p>
+              Contamos con un sistema de identificación para
+              los miembros de la asociación.
+            </p>
+          </article>
+
+
+          <article>
+            <div class="icon">✓</div>
+
+            <h3>Verificación</h3>
+
+            <p>
+              Permite comprobar el estado de un carnet mediante
+              su código de identificación.
+            </p>
+          </article>
+
+        </div>
+
+
+        <div class="cards">
+
+          <article>
+            <div class="icon">🎯</div>
+
+            <h3>Misión</h3>
+
+            <p>
+              Promover la organización, participación y bienestar
+              de las comunidades campesinas, fortaleciendo la unidad,
+              la solidaridad y el trabajo comunitario para contribuir
+              al desarrollo social y territorial.
+            </p>
+          </article>
+
+
+          <article>
+            <div class="icon">🌱</div>
+
+            <h3>Visión</h3>
+
+            <p>
+              Ser una organización campesina fortalecida y reconocida
+              en el departamento de Córdoba por su liderazgo comunitario,
+              su compromiso social y su aporte al desarrollo y bienestar
+              de las comunidades.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="verificacion" class="verify-section">
+      <div class="wrap">
+
+        <div class="eyebrow">Consulta pública</div>
+
+        <h2>Comprueba un carnet</h2>
+
+        <div class="verify-box">
+
+          <p>
+            Introduce el código que aparece en el carnet para
+            comprobar su estado.
+          </p>
+
+          <form id="verifyForm">
+
+            <label for="code">
+              Código del carnet
+            </label>
+
+            <div class="input-row">
+
+              <input
+                type="text"
+                id="code"
+                name="code"
+                placeholder="AGC-000001"
+                autocomplete="off"
+                required
+              >
+
+              <button type="submit" class="btn primary">
+                Verificar
+              </button>
+
+            </div>
+
+          </form>
+
+          <div id="result" class="result hidden"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="contacto" class="section">
+      <div class="wrap contact">
+
+        <div>
+          <div class="eyebrow">Información institucional</div>
+
+          <h2>Contacto</h2>
+
+          <p class="lead">
+            Asociación Guardia Campesina
+          </p>
+        </div>
+
+
+        <div class="contact-card">
+
+          <strong>Departamento</strong>
+          <span>Córdoba, Colombia</span>
+
+          <strong style="display:block;margin-top:18px;">
+            NIT
+          </strong>
+          <span>901862448-2</span>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Asociación Guardia Campesina.
+      Todos los derechos reservados.
+    </div>
+  </footer>
+
+
+  <script src="app.js"></script>
+
+</body>
+  </html>
