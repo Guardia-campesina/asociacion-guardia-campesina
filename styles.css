@@ -1,214 +1,305 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asociación Guardia Campesina</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-  <header class="header">
-    <div class="wrap nav">
-
-      <a href="#inicio" class="brand">
-        <img src="logo.jpg" alt="Logo de la Asociación Guardia Campesina">
-        <span>Asociación<br>Guardia Campesina</span>
-      </a>
-
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#asociacion">La Asociación</a>
-        <a href="#verificacion">Verificación</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <main>
-
-    <section id="inicio" class="hero">
-      <div class="wrap hero-grid">
-
-        <div>
-          <div class="eyebrow">Córdoba, Colombia</div>
-
-          <h1>Asociación Guardia Campesina</h1>
-
-          <p>
-            Organización comprometida con la participación,
-            la solidaridad y el bienestar de las comunidades campesinas.
-          </p>
-
-          <div class="buttons">
-            <a href="#asociacion" class="btn primary">
-              Conocer la Asociación
-            </a>
-
-            <a href="#verificacion" class="btn light">
-              Verificar carnet
-            </a>
-          </div>
-        </div>
-
-
-        <div class="hero-card">
-          <div class="seal">AGC</div>
-
-          <h2>Identidad y organización</h2>
-
-          <p>
-            Fortalecemos la unidad, la participación y el trabajo
-            comunitario de las comunidades campesinas.
-          </p>
-
-          <a href="#verificacion" class="verify-link">
-            Comprobar un carnet →
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <section id="asociacion" class="section">
-      <div class="wrap">
-
-        <div class="eyebrow">Nuestra organización</div>
-
-        <h2>La Asociación</h2>
-
-        <p class="lead">
-          La Asociación Guardia Campesina desarrolla su labor
-          en el departamento de Córdoba, Colombia, promoviendo
-          la organización y participación de las comunidades campesinas.
-        </p>
-
-
-        <div class="cards">
-
-          <article>
-            <div class="icon">🤝</div>
-
-            <h3>Comunidad</h3>
-
-            <p>
-              Promovemos la unidad, la solidaridad y el trabajo
-              comunitario.
-            </p>
-          </article>
-
-
-          <article>
-            <div class="icon">🪪</div>
-
-            <h3>Carnets</h3>
-
-            <p>
-              Contamos con un sistema de identificación para
-              los miembros de la asociación.
-            </p>
-          </article>
-
-
-          <article>
-            <div class="icon">✓</div>
-
-            <h3>Verificación</h3>
-
-            <p>
-              Permite comprobar el estado de un carnet mediante
-              su código de identificación.
-            </p>
-          </article>
-
-        </div>
-
-
-        <div class="cards">
-
-          <article>
-            <div class="icon">🎯</div>
-
-            <h3>Misión</h3>
-
-            <p>
-              Promover la organización, participación y bienestar
-              de las comunidades campesinas, fortaleciendo la unidad,
-              la solidaridad y el trabajo comunitario para contribuir
-              al desarrollo social y territorial.
-            </p>
-          </article>
-
-
-          <article>
-            <div class="icon">🌱</div>
-
-            <h3>Visión</h3>
-
-            <p>
-              Ser una organización campesina fortalecida y reconocida
-              en el departamento de Córdoba por su liderazgo comunitario,
-              su compromiso social y su aporte al desarrollo y bienestar
-              de las comunidades.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <section id="verificacion" class="verify-section">
-      <div class="wrap">
-
-        <div class="eyebrow">Consulta pública</div>
-
-        <h2>Comprueba un carnet</h2>
-
-        <div class="verify-box">
-
-          <p>
-            Introduce el código que aparece en el carnet para
-            comprobar su estado.
-          </p>
-
-          <form id="verifyForm">
-
-            <label for="code">
-              Código del carnet
-            </label>
-
-            <div class="input-row">
-
-              <input
-                type="text"
-                id="code"
-                name="code"
-                placeholder="AGC-000001"
-                autocomplete="off"
-                required
-              >
-
-              <button type="submit" class="btn primary">
-                Verificar
-              </button>
-
-            </div>
-
-          </form>
-
-          <div id="result" class="result hidden"></div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <section id="contacto" class="section">
-      <div class="wrap
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #24321f;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  color: #245c2a;
+}
+
+.brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.brand span {
+  line-height: 1.15;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  font-weight: 600;
+  color: #34452f;
+}
+
+nav a:hover {
+  color: #16833a;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(135deg, #174d27, #3d873c);
+  color: white;
+  padding: 90px 0;
+}
+
+.hero-content {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: #75a942;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.hero .eyebrow {
+  color: #d8efaa;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.hero .lead {
+  font-size: 20px;
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 8px;
+  background: #16833a;
+  color: white;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn.secondary {
+  background: white;
+  color: #245c2a;
+}
+
+/* SECCIONES */
+
+.section {
+  padding: 80px 0;
+}
+
+.section h2,
+.verification h2 {
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #234524;
+}
+
+.section > .wrap > p {
+  max-width: 760px;
+  font-size: 18px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: #16833a;
+  font-weight: 700;
+}
+
+/* TARJETAS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #f5f8f1;
+  border: 1px solid #e0e8d8;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card .icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #285b2d;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* VERIFICACIÓN */
+
+.verification {
+  background: #eef5e9;
+}
+
+.verification form {
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+.verification label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.verification input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #bdcbb7;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.verification input:focus {
+  outline: 2px solid #70a64a;
+  border-color: #70a64a;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #18331d;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero-content {
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  .hero .lead {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+}
