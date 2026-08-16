@@ -1,81 +1,72 @@
 const carnets = {
   "AGC-000001": {
-    estado: "VÁLIDO",
-    nombre: "Miembro de la Asociación",
+    estado: "ACTIVO",
+    nombre: "Juan Pérez Ortiz",
     codigo: "AGC-000001",
-    organizacion: "Asociación Guardia Campesina"
+    vigencia: "15/08/2027"
   },
 
   "AGC-000002": {
-    estado: "VÁLIDO",
+    estado: "ACTIVO",
     nombre: "Miembro de la Asociación",
     codigo: "AGC-000002",
-    organizacion: "Asociación Guardia Campesina"
+    vigencia: "15/08/2027"
   },
 
   "AGC-000003": {
     estado: "SUSPENDIDO",
     nombre: "Miembro de la Asociación",
     codigo: "AGC-000003",
-    organizacion: "Asociación Guardia Campesina"
+    vigencia: "15/08/2027"
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector("#codigo");
-  const boton = document.querySelector("#verificar");
-  const resultado = document.querySelector("#resultado");
+const formulario = document.getElementById("verifyForm");
+const campoCodigo = document.getElementById("code");
+const resultado = document.getElementById("result");
 
-  if (!input || !boton || !resultado) {
-    console.error("No se encontraron los elementos de verificación.");
+formulario.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const codigo = campoCodigo.value.trim().toUpperCase();
+  const carnet = carnets[codigo];
+
+  resultado.classList.remove("hidden");
+
+  if (!carnet) {
+    resultado.innerHTML = `
+      <div class="result-card error">
+        <h3>❌ Carnet no encontrado</h3>
+        <p>El código <strong>${codigo}</strong> no aparece en el registro oficial.</p>
+      </div>
+    `;
     return;
   }
 
-  boton.addEventListener("click", () => {
-    const codigo = input.value.trim().toUpperCase();
-
-    if (!codigo) {
-      resultado.innerHTML = `
-        <div class="resultado error">
-          <strong>Ingrese un código</strong>
-          <p>Escriba el código que aparece en el carnet.</p>
-        </div>
-      `;
-      return;
-    }
-
-    const carnet = carnets[codigo];
-
-    if (!carnet) {
-      resultado.innerHTML = `
-        <div class="resultado error">
-          <strong>Carnet no encontrado</strong>
-          <p>El código <b>${codigo}</b> no aparece en el registro.</p>
-        </div>
-      `;
-      return;
-    }
-
-    if (carnet.estado === "VÁLIDO") {
-      resultado.innerHTML = `
-        <div class="resultado valido">
-          <h3>✓ CARNET VÁLIDO</h3>
-          <p><strong>Nombre:</strong> ${carnet.nombre}</p>
-          <p><strong>Código:</strong> ${carnet.codigo}</p>
-          <p><strong>Organización:</strong> ${carnet.organizacion}</p>
-          <p><strong>Estado:</strong> ${carnet.estado}</p>
-        </div>
-      `;
-    } else {
-      resultado.innerHTML = `
-        <div class="resultado suspendido">
-          <h3>⚠ CARNET SUSPENDIDO</h3>
-          <p><strong>Nombre:</strong> ${carnet.nombre}</p>
-          <p><strong>Código:</strong> ${carnet.codigo}</p>
-          <p><strong>Organización:</strong> ${carnet.organizacion}</p>
-          <p><strong>Estado:</strong> ${carnet.estado}</p>
-        </div>
-      `;
-    }
-  });
+  if (carnet.estado === "ACTIVO") {
+    resultado.innerHTML = `
+      <div class="result-card valid">
+        <h3>✓ Carnet válido</h3>
+        <p>
+          <strong>${carnet.nombre}</strong>
+          · Estado: <strong>ACTIVO</strong>
+          · Vigencia hasta <strong>${carnet.vigencia}</strong>.
+        </p>
+        <p>Código: ${carnet.codigo}</p>
+      </div>
+    `;
+  } else {
+    resultado.innerHTML = `
+      <div class="result-card suspended">
+        <h3>⚠️ Carnet suspendido</h3>
+        <p>
+          <strong>${carnet.nombre}</strong>
+          · Estado: <strong>SUSPENDIDO</strong>.
+        </p>
+        <p>Código: ${carnet.codigo}</p>
+      </div>
+    `;
+  }
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();
