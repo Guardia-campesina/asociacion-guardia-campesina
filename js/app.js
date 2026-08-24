@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Año automático
+    // ==========================================
+    // AÑO AUTOMÁTICO
+    // ==========================================
+
     const year = document.getElementById("year");
 
     if (year) {
@@ -9,42 +12,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // AFILIADOS DE PRUEBA - DATOS FICTICIOS
+    // AFILIADOS DE PRUEBA
+    // TODOS LOS DATOS SON FICTICIOS
+    // EL NÚMERO DE DOCUMENTO ES EL CÓDIGO
     // ==========================================
 
-const afiliados = {
+    const afiliados = {
 
-    "1234567890": {
-        nombre: "Carlos Andrés Pérez",
-        documento: "1234567890",
-        municipio: "Montelíbano",
-        vereda: "La Esperanza",
-        fecha: "15/01/2026",
-        tipo: "Guardia Campesina",
-        estado: "ACTIVO"
-    },
+        "1234567890": {
+            nombre: "Carlos Andrés Pérez",
+            documento: "1234567890",
+            municipio: "Montelíbano",
+            vereda: "La Esperanza",
+            fecha: "15/01/2026",
+            tipo: "Guardia Campesina",
+            estado: "ACTIVO"
+        },
 
-    "987654321": {
-        nombre: "María Fernanda López",
-        documento: "987654321",
-        municipio: "Puerto Libertador",
-        vereda: "El Paraíso",
-        fecha: "20/01/2026",
-        tipo: "Afiliada",
-        estado: "ACTIVO"
-    },
+        "987654321": {
+            nombre: "María Fernanda López",
+            documento: "987654321",
+            municipio: "Puerto Libertador",
+            vereda: "El Paraíso",
+            fecha: "20/01/2026",
+            tipo: "Afiliada",
+            estado: "ACTIVO"
+        },
 
-    "1122334455": {
-        nombre: "José Manuel Torres",
-        documento: "1122334455",
-        municipio: "San José de Uré",
-        vereda: "Las Palmas",
-        fecha: "05/02/2026",
-        tipo: "Guardia Campesina",
-        estado: "SUSPENDIDO"
-    }
+        "1122334455": {
+            nombre: "José Manuel Torres",
+            documento: "1122334455",
+            municipio: "San José de Uré",
+            vereda: "Las Palmas",
+            fecha: "05/02/2026",
+            tipo: "Guardia Campesina",
+            estado: "SUSPENDIDO"
+        },
 
-};
+        "5566778899": {
+            nombre: "Ana Sofía Martínez",
+            documento: "5566778899",
+            municipio: "Montelíbano",
+            vereda: "Nueva Esperanza",
+            fecha: "10/02/2026",
+            tipo: "Afiliada",
+            estado: "ACTIVO"
+        },
+
+        "4455667788": {
+            nombre: "Luis Eduardo Gómez",
+            documento: "4455667788",
+            municipio: "Tierralta",
+            vereda: "El Progreso",
+            fecha: "18/02/2026",
+            tipo: "Afiliado",
+            estado: "INACTIVO"
+        }
+
+    };
+
 
     // ==========================================
     // ELEMENTOS DEL FORMULARIO
@@ -60,101 +86,136 @@ const afiliados = {
         document.getElementById("resultado");
 
 
+    // Comprobar que existen los elementos
+
     if (!formulario || !codigo || !resultado) {
-        console.error("No se encontró el formulario de verificación.");
+
+        console.error(
+            "No se encontró el formulario de verificación."
+        );
+
         return;
     }
 
 
     // ==========================================
-    // VERIFICACIÓN DEL CARNET
+    // VERIFICAR DOCUMENTO
     // ==========================================
 
     formulario.addEventListener("submit", function (event) {
 
         event.preventDefault();
 
-        let codigoIngresado =
-            codigo.value.trim().toUpperCase();
+
+        // Obtener número escrito
+
+        const documentoIngresado =
+            codigo.value.trim();
+
+
+        // Mostrar resultado
 
         resultado.hidden = false;
 
 
-        // Si está vacío
-        if (codigoIngresado === "") {
+        // ==========================================
+        // CAMPO VACÍO
+        // ==========================================
 
-            resultado.className = "result invalid";
+        if (documentoIngresado === "") {
+
+            resultado.className =
+                "result invalid";
 
             resultado.innerHTML =
-                "<strong>⚠ Ingresa un código.</strong><br>" +
-                "Escribe el código de verificación.";
+                "<strong>⚠ INGRESA EL NÚMERO DE DOCUMENTO</strong><br><br>" +
+                "Escribe el número de documento para realizar la consulta.";
 
             return;
         }
 
 
         // ==========================================
-        // ACEPTAR AGC CON O SIN GUION
+        // VALIDAR QUE SOLO SEAN NÚMEROS
         // ==========================================
 
-        codigoIngresado =
-            codigoIngresado.replace(/-/g, "");
+        if (!/^\d+$/.test(documentoIngresado)) {
+
+            resultado.className =
+                "result invalid";
+
+            resultado.innerHTML =
+                "<strong>⚠ DOCUMENTO NO VÁLIDO</strong><br><br>" +
+                "El código de verificación debe contener únicamente números.";
+
+            return;
+        }
 
 
-        // Buscar afiliado
+        // ==========================================
+        // BUSCAR AFILIADO
+        // ==========================================
+
         const afiliado =
-            afiliados[codigoIngresado];
+            afiliados[documentoIngresado];
 
 
         // ==========================================
-        // CÓDIGO NO ENCONTRADO
+        // DOCUMENTO NO ENCONTRADO
         // ==========================================
 
         if (!afiliado) {
 
-            resultado.className = "result invalid";
+            resultado.className =
+                "result invalid";
 
             resultado.innerHTML =
-                "<strong>✕ AFILIADO NO ENCONTRADO</strong><br><br>" +
-                "El código <strong>" +
-                codigoIngresado +
-                "</strong> no corresponde a un registro de prueba.";
+                "<strong>✕ DOCUMENTO NO ENCONTRADO</strong><br><br>" +
+
+                "El número de documento <strong>" +
+                documentoIngresado +
+                "</strong> no corresponde a un registro.";
 
             return;
         }
 
 
         // ==========================================
-        // AFILIACIÓN SUSPENDIDA O INACTIVA
+        // AFILIACIÓN NO VIGENTE
         // ==========================================
 
         if (afiliado.estado !== "ACTIVO") {
 
-            resultado.className = "result invalid";
+            resultado.className =
+                "result invalid";
 
             resultado.innerHTML =
+
                 "<strong>⚠ AFILIACIÓN NO VIGENTE</strong><br><br>" +
 
                 "<strong>Nombre:</strong> " +
-                afiliado.nombre + "<br>" +
+                afiliado.nombre +
+                "<br>" +
 
                 "<strong>Documento:</strong> " +
-                afiliado.documento + "<br>" +
-
-                "<strong>Código:</strong> " +
-                codigoIngresado + "<br>" +
+                afiliado.documento +
+                "<br>" +
 
                 "<strong>Municipio:</strong> " +
-                afiliado.municipio + "<br>" +
+                afiliado.municipio +
+                "<br>" +
 
                 "<strong>Vereda:</strong> " +
-                afiliado.vereda + "<br>" +
+                afiliado.vereda +
+                "<br>" +
 
                 "<strong>Fecha de afiliación:</strong> " +
-                afiliado.fecha + "<br>" +
+                afiliado.fecha +
+                "<br>" +
 
-                "<strong>Tipo:</strong> " +
-                afiliado.tipo + "<br><br>" +
+                "<strong>Tipo de afiliado:</strong> " +
+                afiliado.tipo +
+                "<br><br>" +
 
                 "<strong>Estado:</strong> " +
                 afiliado.estado;
@@ -167,33 +228,39 @@ const afiliados = {
         // AFILIACIÓN ACTIVA
         // ==========================================
 
-        resultado.className = "result valid";
+        resultado.className =
+            "result valid";
 
         resultado.innerHTML =
+
             "<strong>✓ AFILIACIÓN ACTIVA</strong><br><br>" +
 
             "<strong>Nombre:</strong> " +
-            afiliado.nombre + "<br>" +
+            afiliado.nombre +
+            "<br>" +
 
             "<strong>Documento:</strong> " +
-            afiliado.documento + "<br>" +
-
-            "<strong>Código:</strong> " +
-            codigoIngresado + "<br>" +
+            afiliado.documento +
+            "<br>" +
 
             "<strong>Municipio:</strong> " +
-            afiliado.municipio + "<br>" +
+            afiliado.municipio +
+            "<br>" +
 
             "<strong>Vereda:</strong> " +
-            afiliado.vereda + "<br>" +
+            afiliado.vereda +
+            "<br>" +
 
             "<strong>Fecha de afiliación:</strong> " +
-            afiliado.fecha + "<br>" +
+            afiliado.fecha +
+            "<br>" +
 
-            "<strong>Tipo:</strong> " +
-            afiliado.tipo + "<br><br>" +
+            "<strong>Tipo de afiliado:</strong> " +
+            afiliado.tipo +
+            "<br><br>" +
 
-            "<strong>Estado:</strong> ACTIVO<br><br>" +
+            "<strong>Estado:</strong> ACTIVO" +
+            "<br><br>" +
 
             "Asociación Guardia Campesina";
 
