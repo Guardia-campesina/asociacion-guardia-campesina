@@ -12,60 +12,39 @@ document.addEventListener("DOMContentLoaded", function () {
     // AFILIADOS DE PRUEBA - DATOS FICTICIOS
     // ==========================================
 
-    const afiliados = {
+const afiliados = {
 
-        "AGC1234567890": {
-            nombre: "Carlos Andrés Pérez",
-            documento: "1234567890",
-            municipio: "Montelíbano",
-            vereda: "La Esperanza",
-            fecha: "15/01/2026",
-            tipo: "Guardia Campesina",
-            estado: "ACTIVO"
-        },
+    "1234567890": {
+        nombre: "Carlos Andrés Pérez",
+        documento: "1234567890",
+        municipio: "Montelíbano",
+        vereda: "La Esperanza",
+        fecha: "15/01/2026",
+        tipo: "Guardia Campesina",
+        estado: "ACTIVO"
+    },
 
-        "AGC987654321": {
-            nombre: "María Fernanda López",
-            documento: "987654321",
-            municipio: "Puerto Libertador",
-            vereda: "El Paraíso",
-            fecha: "20/01/2026",
-            tipo: "Afiliada",
-            estado: "ACTIVO"
-        },
+    "987654321": {
+        nombre: "María Fernanda López",
+        documento: "987654321",
+        municipio: "Puerto Libertador",
+        vereda: "El Paraíso",
+        fecha: "20/01/2026",
+        tipo: "Afiliada",
+        estado: "ACTIVO"
+    },
 
-        "AGC1122334455": {
-            nombre: "José Manuel Torres",
-            documento: "1122334455",
-            municipio: "San José de Uré",
-            vereda: "Las Palmas",
-            fecha: "05/02/2026",
-            tipo: "Guardia Campesina",
-            estado: "SUSPENDIDO"
-        },
+    "1122334455": {
+        nombre: "José Manuel Torres",
+        documento: "1122334455",
+        municipio: "San José de Uré",
+        vereda: "Las Palmas",
+        fecha: "05/02/2026",
+        tipo: "Guardia Campesina",
+        estado: "SUSPENDIDO"
+    }
 
-        "AGC5566778899": {
-            nombre: "Ana Sofía Martínez",
-            documento: "5566778899",
-            municipio: "Montelíbano",
-            vereda: "Nueva Esperanza",
-            fecha: "10/02/2026",
-            tipo: "Afiliada",
-            estado: "ACTIVO"
-        },
-
-        "AGC4455667788": {
-            nombre: "Luis Eduardo Gómez",
-            documento: "4455667788",
-            municipio: "Tierralta",
-            vereda: "El Progreso",
-            fecha: "18/02/2026",
-            tipo: "Afiliado",
-            estado: "INACTIVO"
-        }
-
-    };
-
+};
 
     // ==========================================
     // ELEMENTOS DEL FORMULARIO
