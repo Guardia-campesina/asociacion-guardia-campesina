@@ -1,0 +1,126 @@
+/* ==================================================
+   ASOCIACIÓN GUARDIA CAMPESINA
+   FUNCIONES DEL SITIO
+================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* Año automático del pie de página */
+
+    const year = document.getElementById("year");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+
+    /* ==================================================
+       CONSULTA DE AFILIACIÓN
+       
+       ESTOS DATOS SON SOLAMENTE DE PRUEBA.
+       NO COLOCAR DATOS REALES DE AFILIADOS AQUÍ.
+    ================================================== */
+
+    const afiliadosPrueba = {
+
+        "AGC-000001": {
+            estado: "ACTIVO"
+        },
+
+        "AGC-000002": {
+            estado: "ACTIVO"
+        },
+
+        "AGC-000003": {
+            estado: "SUSPENDIDO"
+        }
+
+    };
+
+
+    const formulario =
+        document.getElementById("verificationForm");
+
+    const codigo =
+        document.getElementById("codigo");
+
+    const resultado =
+        document.getElementById("resultado");
+
+
+    if (formulario) {
+
+        formulario.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const codigoIngresado =
+                codigo.value.trim().toUpperCase();
+
+
+            resultado.className = "result";
+
+
+            if (!codigoIngresado) {
+
+                resultado.className = "result invalid";
+
+                resultado.innerHTML = `
+                    <strong>⚠ Ingresa un código.</strong>
+                    <br>
+                    Debes escribir un código de afiliación.
+                `;
+
+                return;
+            }
+
+
+            const afiliado =
+                afiliadosPrueba[codigoIngresado];
+
+
+            if (!afiliado) {
+
+                resultado.className = "result invalid";
+
+                resultado.innerHTML = `
+                    <strong>✕ Registro no encontrado</strong>
+                    <br>
+                    El código ingresado no coincide
+                    con un registro de prueba.
+                `;
+
+                return;
+            }
+
+
+            if (afiliado.estado !== "ACTIVO") {
+
+                resultado.className = "result invalid";
+
+                resultado.innerHTML = `
+                    <strong>⚠ Afiliación no vigente</strong>
+                    <br>
+                    Estado: ${afiliado.estado}
+                `;
+
+                return;
+            }
+
+
+            resultado.className = "result valid";
+
+            resultado.innerHTML = `
+                <strong>✓ AFILIACIÓN ACTIVA</strong>
+                <br>
+                Código: ${codigoIngresado}
+                <br>
+                Estado: ACTIVO
+            `;
+
+        });
+
+    }
+
+});
