@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Asociación Guardia Campesina</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="contenedor encabezado">
+
+        <a href="#inicio" class="logo">
+            <img src="logo.jpg" alt="Logo Guardia Campesina">
+            <span>
+                ASOCIACIÓN<br>
+                GUARDIA CAMPESINA
+            </span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#asociacion">La Asociación</a>
+            <a href="#mision">Misión</a>
+            <a href="#vision">Visión</a>
+            <a href="#valores">Valores</a>
+            <a href="#verificar">Verificar carnet</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<section id="inicio" class="hero">
+
+    <div class="contenedor hero-contenido">
+
+        <div>
+            <p class="etiqueta">ASOCIACIÓN GUARDIA CAMPESINA</p>
+
+            <h1>
+                Organización, territorio y comunidad.
+            </h1>
+
+            <p class="descripcion">
+                Sitio institucional de la Asociación Guardia Campesina,
+                orientado a la información, organización comunitaria
+                y verificación de carnets de afiliación.
+            </p>
+
+            <a href="#verificar" class="boton">
+                Verificar carnet
+            </a>
+        </div>
+
+        <div class="tarjeta-hero">
+            <img src="logo.jpg" alt="Guardia Campesina">
+            <h2>Identidad y organización</h2>
+            <p>
+                Trabajamos por el fortalecimiento de nuestras
+                comunidades y nuestro territorio.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="asociacion">
+
+    <div class="contenedor">
+
+        <p class="etiqueta-verde">QUIÉNES SOMOS</p>
+
+        <h2>Asociación Guardia Campesina</h2>
+
+        <p class="texto">
+            Organización campesina comprometida con la defensa de los
+            derechos humanos, la protección del ambiente, el territorio
+            y el fortalecimiento de las comunidades del sur de Córdoba.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="mision" class="seccion-verde">
+
+    <div class="contenedor">
+
+        <h2>Misión</h2>
+
+        <p class="texto">
+            La Asociación de Guardia Campesina tiene como misión promover
+            y garantizar la defensa de los derechos humanos, la protección
+            del ambiente y la preservación del territorio en el sur del
+            departamento de Córdoba. Para tal fin, desarrolla acciones
+            orientadas a la gestión, formulación y ejecución de proyectos
+            comunitarios, la mediación y resolución pacífica de conflictos
+            y la implementación de programas y actividades sociales que
+            contribuyan al fortalecimiento del tejido social, la cohesión
+            comunitaria y el desarrollo sostenible.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="vision">
+
+    <div class="contenedor">
+
+        <h2>Visión</h2>
+
+        <p class="texto">
+            Ser una organización campesina reconocida por defender los
+            derechos humanos, proteger el ambiente y salvaguardar el
+            territorio, promoviendo la unidad, la justicia y el desarrollo
+            sostenible de las comunidades del sur de Córdoba, mediante
+            la gestión participativa de proyectos, la resolución pacífica
+            de conflictos y la construcción de tejido social.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="valores" class="seccion-valores">
+
+    <div class="contenedor">
+
+        <p class="etiqueta-verde">NUESTROS PRINCIPIOS</p>
+
+        <h2>Nuestros valores</h2>
+
+        <div class="valores">
+
+            <div class="valor">
+                <h3>Solidaridad</h3>
+                <p>
+                    Nos apoyamos mutuamente y trabajamos unidos
+                    por el bienestar colectivo.
+                </p>
+            </div>
+
+            <div class="valor">
+                <h3>Justicia</h3>
+                <p>
+                    Actuamos con equidad, imparcialidad y respeto
+                    a los derechos de todas las personas.
+                </p>
+            </div>
+
+            <div class="valor">
+                <h3>Respeto</h3>
+                <p>
+                    Valoramos la diversidad cultural, territorial
+                    y social de las comunidades.
+                </p>
+            </div>
+
+            <div class="valor">
+                <h3>Responsabilidad</h3>
+                <p>
+                    Asumimos con compromiso nuestras acciones
+                    en beneficio de la comunidad y del territorio.
+                </p>
+            </div>
+
+            <div class="valor">
+                <h3>Transparencia</h3>
+                <p>
+                    Mantenemos prácticas claras, éticas y abiertas
+                    en nuestra gestión.
+                </p>
+            </div>
+
+            <div class="valor">
+                <h3>Compromiso con la paz</h3>
+                <p>
+                    Trabajamos por una construcción de paz duradera,
+                    con justicia social y respeto a la vida.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="verificar" class="verificacion">
+
+    <div class="contenedor">
+
+        <div class="caja-verificacion">
+
+            <p class="etiqueta-verde">PORTAL DE VERIFICACIÓN</p>
+
+            <h2>Verificar carnet</h2>
+
+            <p>
+                Escribe el código del carnet para consultar su estado.
+            </p>
+
+            <form id="verificationForm">
+
+                <label for="codigo">
+                    Código del carnet
+                </label>
+
+                <input
+                    type="text"
+                    id="codigo"
+                    placeholder="Ejemplo: AGC-000001"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" class="boton">
+                    VERIFICAR
+                </button>
+
+            </form>
+
+            <div id="resultado" class="result" hidden></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contacto">
+
+    <div class="contenedor">
+
+        <h2>Contacto</h2>
+
+        <p class="texto">
+            Asociación Guardia Campesina del Sur de Córdoba.
+        </p>
+
+        <p class="texto">
+            Próximamente incorporaremos los datos oficiales
+            de contacto y atención a la comunidad.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="contenedor">
+
+        <strong>Asociación Guardia Campesina</strong>
+
+        <p>
+            © <span id="year"></span> Asociación Guardia Campesina
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
