@@ -1,5 +1,5 @@
 /* ================================
-   ESTILOS GENERALES
+   GENERAL
 ================================ */
 
 * {
@@ -20,6 +20,92 @@ body {
 .contenedor {
     width: min(1180px, 92%);
     margin: auto;
+}
+
+
+/* ================================
+   VENTANA WHATSAPP
+================================ */
+
+.popup-whatsapp {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 35, 18, 0.72);
+    backdrop-filter: blur(4px);
+}
+
+.popup-contenido {
+    position: relative;
+    width: min(430px, 92vw);
+    max-height: 90vh;
+    padding: 12px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
+    animation: aparecerPopup .35s ease;
+}
+
+.imagen-whatsapp {
+    display: block;
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.cerrar-popup {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: #075b2c;
+    color: white;
+    font-size: 30px;
+    line-height: 32px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+}
+
+.cerrar-popup:hover {
+    background: #f4c542;
+    color: #173d2a;
+}
+
+.boton-whatsapp {
+    display: block;
+    margin: 12px 4px 4px;
+    padding: 14px;
+    border-radius: 30px;
+    background: #168047;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.boton-whatsapp:hover {
+    background: #075b2c;
+}
+
+@keyframes aparecerPopup {
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 
@@ -107,17 +193,6 @@ nav a:hover {
         linear-gradient(135deg, #064c27 0%, #08743a 58%, #0b8a47 100%);
     color: white;
     padding: 95px 0 110px;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    background: rgba(244,197,66,.08);
-    right: -150px;
-    bottom: -180px;
 }
 
 .hero-contenido {
@@ -222,27 +297,6 @@ nav a:hover {
     border-radius: 50%;
 }
 
-.decoracion {
-    position: absolute;
-    border-radius: 50%;
-    border: 5px solid #f4c542;
-}
-
-.decoracion-1 {
-    width: 70px;
-    height: 70px;
-    top: 10px;
-    right: 45px;
-}
-
-.decoracion-2 {
-    width: 35px;
-    height: 35px;
-    bottom: 35px;
-    left: 40px;
-    border-color: #7cc9a0;
-}
-
 
 /* ================================
    SECCIONES
@@ -331,7 +385,7 @@ section {
 
 
 /* ================================
-   MISIÓN
+   MISIÓN Y VISIÓN
 ================================ */
 
 .seccion-info {
@@ -381,8 +435,7 @@ section {
 .vision-destacado {
     min-height: 300px;
     border-radius: 30px;
-    background:
-        linear-gradient(145deg, #075b2c, #0b8a47);
+    background: linear-gradient(145deg, #075b2c, #0b8a47);
     color: white;
     display: flex;
     flex-direction: column;
@@ -390,7 +443,6 @@ section {
     justify-content: center;
     padding: 40px;
     text-align: center;
-    box-shadow: 0 20px 45px rgba(7,91,44,.18);
 }
 
 .vision-destacado span {
@@ -454,8 +506,7 @@ section {
 ================================ */
 
 .verificacion {
-    background:
-        linear-gradient(135deg, #064c27, #08743a);
+    background: linear-gradient(135deg, #064c27, #08743a);
     color: white;
 }
 
@@ -523,10 +574,6 @@ input:focus {
     width: 100%;
     background: #075b2c;
     color: white;
-}
-
-.caja-verificacion .boton:hover {
-    background: #0b7b3e;
 }
 
 .result {
@@ -659,7 +706,7 @@ footer {
 
 
 /* ================================
-   CELULARES Y TABLETS
+   TABLET
 ================================ */
 
 @media (max-width: 1000px) {
@@ -677,17 +724,12 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero-contenido {
-        gap: 40px;
-    }
-
-    .logo-circulo {
-        width: 280px;
-        height: 280px;
-    }
-
 }
 
+
+/* ================================
+   CELULAR
+================================ */
 
 @media (max-width: 760px) {
 
@@ -773,6 +815,29 @@ footer {
 
     .footer-lema {
         text-align: center;
+    }
+
+    /* Popup en celular */
+
+    .popup-whatsapp {
+        padding: 15px;
+    }
+
+    .popup-contenido {
+        width: min(360px, 92vw);
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .imagen-whatsapp {
+        max-height: 70vh;
+    }
+
+    .cerrar-popup {
+        width: 40px;
+        height: 40px;
+        right: -8px;
+        top: -8px;
     }
 
 }
